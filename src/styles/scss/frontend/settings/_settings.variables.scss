@@ -1,0 +1,50 @@
+// color variables
+$colors: (
+  50: #ffffff,
+  60: #f3f8ff,
+  70: #eeeeee,
+  80: #f5f5f5,
+  90: #d9d9d9,
+  100: #f6f6f6,
+  450: #25e89f,
+  500: #38abc8,
+  550: #204478,
+  580: #7287a5,
+  600: #ffbc1f,
+  650: #3d3d3d,
+  700: #292929,
+  800: #030504,
+  900: #000000,
+);
+
+@function color($color) {
+  // checking to see if our $theme-colors map has that $color key
+  @if map-has-key($colors, $color) {
+    // and if so, it will get that color for us in the map-get syntax
+    @return map-get($colors, $color);
+  }
+  // if not, it will give us a helpful error when we compile
+  @error "Unknown `#{$color}` in $colors.";
+  @return null;
+}
+
+// fonts
+$fonts: (
+  rg: "SegoeUI-Regular",
+  sb: "SegoeUI-Semibold",
+  bd: "SegoeUI-Bold",
+);
+
+@function font($font) {
+  // checking to see if our $theme-fonts map has that $font key
+  @if map-has-key($fonts, $font) {
+    // and if so, it will get that font for us in the map-get syntax
+    @return map-get($fonts, $font);
+  }
+  // if not, it will give us a helpful error when we compile
+  @error "Unknown `#{$font}` in $fonts.";
+  @return null;
+}
+
+$imageurl: "../../../images/frontend";
+$fonturl: "../../../fonts/frontend/";

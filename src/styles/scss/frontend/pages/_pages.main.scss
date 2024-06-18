@@ -1,0 +1,12 @@
+@import "auth.page";
+@import "pricing.page";
+@import "./search.page";
+@import "profile.page";
+@import "faq.page";
+
+.chatHead_toolsList_toggle {
+  display: none;
+  @media (max-width: 1599px) {
+    display: inline-block;
+  }
+}
